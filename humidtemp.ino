@@ -3,6 +3,7 @@ https://ericslenk.com/posts/getting-started-with-the-nodemcu-esp8266-and-arduino
 */
 
 void setup() {
+	Serial.begin(9600);
 	pinMode(LED_BUILTIN, OUTPUT);
 }
 

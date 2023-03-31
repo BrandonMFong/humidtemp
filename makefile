@@ -7,3 +7,6 @@ build:
 	$(CLI) compile --fqbn $(BOARD) .
 	$(CLI) upload --port $(DEV) --fqbn $(BOARD) .
 
+monitor:
+	$(CLI) monitor -p $(DEV)
+
