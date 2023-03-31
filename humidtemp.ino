@@ -2,6 +2,10 @@
 https://ericslenk.com/posts/getting-started-with-the-nodemcu-esp8266-and-arduino-cli
 */
 
+#include <DHTesp.h>
+
+DHTesp dht;
+
 void setup() {
 	Serial.begin(9600);
 	pinMode(LED_BUILTIN, OUTPUT);
@@ -12,6 +16,6 @@ void loop() {
     delay(1000);
     digitalWrite(LED_BUILTIN, LOW);
     delay(1000);
-	Serial.print("NO FORMAT");
+	Serial.print("NO FORMAT\n");
 }
 
