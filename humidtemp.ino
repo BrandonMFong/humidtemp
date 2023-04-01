@@ -2,20 +2,23 @@
 https://ericslenk.com/posts/getting-started-with-the-nodemcu-esp8266-and-arduino-cli
 */
 
-#include <DHTesp.h>
+#include "DHT.h"
 
-DHTesp dht;
+DHT dht(5,DHT11);
 
 void setup() {
+	delay(200);
 	Serial.begin(9600);
-	pinMode(LED_BUILTIN, OUTPUT);
+	dht.begin();
+	delay(1000);
 }
 
 void loop() {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(1000);
-	Serial.print("NO FORMAT\n");
+	delay(5000);
+	Serial.print("Temperature in F: ");
+	Serial.println(dht.convertCtoF(dht.readTemperature()));
+	Serial.print("Humidity in C: ");
+	Serial.println((dht.readHumidity()));
+	delay(1000);
 }
 
