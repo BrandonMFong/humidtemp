@@ -42,6 +42,8 @@ void loop() {
 		char buf[size];
 		snprintf(buf, size, "\"humid\" : \"%f\", \"temp\" : \"%f\"", dht.readTemperature(), dht.readHumidity());
 		client.write(buf);
+		Serial.print("Sent: ");
+		Serial.println(buf);
 		client.stop();
 	}
 }
