@@ -12,7 +12,7 @@ BOARD := esp8266:esp8266:nodemcuv2
 install:
 	$(CLI) lib install "DHT sensor library"
 
-build:
+build: *.ino
 	$(CLI) compile --fqbn $(BOARD) .
 
 flash: build
