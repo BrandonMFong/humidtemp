@@ -40,7 +40,7 @@ void loop() {
 	if (client && client.connected()) {
 		size_t size = 2 << 6;
 		char buf[size];
-		snprintf(buf, size, "\"humid\" : \"%f\", \"temp\" : \"%f\"", dht.readTemperature(), dht.readHumidity());
+		snprintf(buf, size, "\"humid\" : %f, \"temp\" : %f", dht.readTemperature(), dht.readHumidity());
 		client.write(buf);
 		Serial.print("Sent: ");
 		Serial.println(buf);
