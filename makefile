@@ -13,7 +13,7 @@ install:
 	$(CLI) lib install "DHT sensor library"
 
 build: *.ino
-	$(CLI) compile --fqbn $(BOARD) .
+	$(CLI) compile --clean --fqbn $(BOARD) .
 
 flash: build
 	$(CLI) upload --port $(DEV) --fqbn $(BOARD) .
